@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "339694434196",
+    "project_id": "library-photo-with-bloc",
+    "storage_bucket": "library-photo-with-bloc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339694434196:android:a672143f3f681bf9774181",
+        "android_client_info": {
+          "package_name": "com.example.note_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRfyr8CdE-JMTdFx-BhLul_wAoHs6X80I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
