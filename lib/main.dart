@@ -5,7 +5,6 @@ import 'package:note_app/firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  
 
   runApp(const MyApp());
 }
@@ -48,7 +47,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Note App')),
+      appBar: AppBar(title: const Text('Note App')),
     );
   }
 }
