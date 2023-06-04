@@ -15,10 +15,7 @@ Map<String, AuthError> authErrorMapping = {
 abstract class AuthError {
   final String dialogTitle;
   final String dialogText;
-  const AuthError({
-    required this.dialogTitle,
-    required this.dialogText,
-  });
+  const AuthError({required this.dialogTitle, required this.dialogText});
 
 // implement your base AuthError class
   factory AuthError.from(FirebaseAuthException exception) =>
