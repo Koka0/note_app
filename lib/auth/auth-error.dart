@@ -58,6 +58,7 @@ class AuthErrorOperationNotAllowed extends AuthError {
       : super(
           dialogTitle: 'Operation not allowed',
           dialogText: 'You cannot register using this method at this moment!',
+
         );
 }
 
