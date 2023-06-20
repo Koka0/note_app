@@ -163,7 +163,6 @@ class AppBloc extends Bloc<AppEvent, AppState> {
       );
       // Delete the user's folder
       try {
-        // delete the user folder,
         final folderContents =
             await FirebaseStorage.instance.ref(user.uid).listAll();
         for (final item in folderContents.items) {
@@ -212,7 +211,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     };
   }
 
-  // handle the app login,
+  // handle the app login event,
   EventHandler<AppEventLogIn, AppState> appEventLogIn() {
     return (event, emit) async {
       // log the user in
@@ -250,6 +249,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     };
   }
 
+// handle the app registration event
   EventHandler<AppEventGoToRegistration, AppState> appEventGoToRegistration() {
     return (event, emit) async {
       emit(
