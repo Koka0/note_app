@@ -15,53 +15,81 @@ class LoginView extends HookWidget {
         useTextEditingController(text: 'BE16B3FDCD'.ifDebugging);
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text(
           'Log in',
+          style: TextStyle(color: Colors.white),
         ),
       ),
-      body: Column(
-        children: [
-          TextField(
-            controller: emailController,
-            keyboardType: TextInputType.emailAddress,
-            keyboardAppearance: Brightness.dark,
-            decoration: const InputDecoration(
-              hintText: 'Enter your email here...',
-            ),
-          ),
-          TextField(
-            controller: passwordController,
-            keyboardAppearance: Brightness.dark,
-            decoration: const InputDecoration(
-              hintText: 'Enter your password here...',
-            ),
-            obscureText: true,
-            obscuringCharacter: '⚫',
-          ),
-          TextButton(
-            onPressed: () {
-              final email = emailController.text;
-              final password = passwordController.text;
-              context.read<AppBloc>().add(
-                    AppEventLogIn(
-                      email: email,
-                      password: password,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 15,
+          vertical: 15,
+        ),
+        child: Column(
+          children: [
+            TextField(
+              controller: emailController,
+              keyboardType: TextInputType.emailAddress,
+              keyboardAppearance: Brightness.dark,
+              decoration: InputDecoration(
+                hintText: 'Enter your email here...',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: const BorderSide(
+                    color: Color(
+                      0xff6750a4,
                     ),
-                  );
-            },
-            child: const Text(
-              'Login',
+                  ),
+                ),
+              ),
             ),
-          ),
-          TextButton(
-            onPressed: () {
-              context.read<AppBloc>().add(
-                    AppEventGoToRegistration(),
-                  );
-            },
-            child: const Text('Not registered yet? Register here!'),
-          ),
-        ],
+            const SizedBox(height: 10),
+            TextField(
+              controller: passwordController,
+              keyboardAppearance: Brightness.dark,
+              decoration: InputDecoration(
+                hintText: 'Enter your password here...',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: const BorderSide(
+                    color: Color(
+                      0xff6750a4,
+                    ),
+                  ),
+                ),
+              ),
+              obscureText: true,
+              obscuringCharacter: '⚫',
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            TextButton(
+              onPressed: () {
+                final email = emailController.text;
+                final password = passwordController.text;
+                context.read<AppBloc>().add(
+                      AppEventLogIn(
+                        email: email,
+                        password: password,
+                      ),
+                    );
+              },
+              child: const Text(
+                'Login',
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                context.read<AppBloc>().add(
+                      AppEventGoToRegistration(),
+                    );
+              },
+              child: const Text('Not registered yet? Register here!'),
+            ),
+          ],
+        ),
       ),
     );
   }

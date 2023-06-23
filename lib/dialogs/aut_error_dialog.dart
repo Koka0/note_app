@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart' show BuildContext;
 import 'package:note_app/auth/auth-error.dart';
 import 'package:note_app/dialogs/generic_dialoge.dart';
 
-Future<void> showAuthErrorDialog({
+Future<void> showAuthError({
   required AuthError authError,
   required BuildContext context,
 }) {
